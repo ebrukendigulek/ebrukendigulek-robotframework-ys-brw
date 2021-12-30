@@ -1,4 +1,4 @@
-Virtual env işlemleri
+##  Virtual env işlemleri
 
 Virtual env nasıl yaratıtılır
 1- Once virtual env ın kendisi pip paket yoneticisi ile kurulur.(python2 ile çalışılacaksa python3 yerine python yazılır.)
@@ -11,7 +11,7 @@ Virtual env nasıl yaratıtılır
 - "source venv/bin/activate"
 
 
-Chrome Driver işlemleri
+##  Chrome Driver işlemleri
 
 Projeyi aktive ettikten sonra chrome driver linklenir.
 1- chrome driver'ın usr/bin in altında gorebilmesi için chromedriver indirilir.
@@ -29,7 +29,7 @@ Projeyi aktive ettikten sonra chrome driver linklenir.
 - python -m pip install --upgrade pip
 - pip install -r requirements.txt
 
-Projeyi Çalıştırmak için:
+##  Projeyi Çalıştırmak için:
 
 1- venv klasoru altına gidilerek test çalıştırılır. Test sonuçlarını -d ile belirtiğiniz klasor altına atabilirsiniz.
-robot -d ../Results ../test/yemeksepeti.robot
+- robot -d ../Results ../test/yemeksepeti.robot
