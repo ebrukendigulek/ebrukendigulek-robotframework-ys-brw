@@ -10,7 +10,7 @@ Test Setup      Begin Web Test
 Test Teardown   End Web Test
 
 *** Test Cases ***
-User can add favorite
+User can add favorite restaurant
     YemekSepetiApp.Open Home Page and User choose city
     YemekSepetiApp.Dont show pop-ups with cookies
     YemekSepetiApp.User logins from home page
