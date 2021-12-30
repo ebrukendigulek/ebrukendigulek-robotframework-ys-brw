@@ -1,5 +1,5 @@
 *** Settings ***
-Documentation  HomePage
+Documentation  RestaurantPage
 Library  SeleniumLibrary
 
 *** Variables ****

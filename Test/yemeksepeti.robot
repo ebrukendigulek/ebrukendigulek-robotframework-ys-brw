@@ -2,33 +2,21 @@
 Documentation    Yemeksepeti
 Library  DebugLibrary
 Library  SeleniumLibrary
-Resource    ../Resources/Pages/LoginPage.robot
 Resource    ../Resources/Common.robot
-Resource    ../Resources/Pages/CityPage.robot 
-Resource    ../Resources/Pages/HomePage.robot 
-Resource    ../Resources/Pages/RestaurantListPage.robot 
-Resource    ../Resources/Pages/RestaurantPage.robot
-Resource    ../Resources/Pages/FavoritePage.robot 
+Resource    ../Resources/YemekSepetiApp.robot
+
 
 Test Setup      Begin Web Test
 Test Teardown   End Web Test
 
 *** Test Cases ***
-Yemeksepeti Success Login
-    Common.Open Home Page
-    CityPage.Choose City
-    CityPage.Dont show pop-ups with cookies
-    LoginPage.Login With Crendentials
-    HomePage.Open Choose Region Container
-    HomePage.Select Random Regions
-    HomePage.Click Search Restaurant Button
-    RestaurantListPage.Close Joker PopUp If Displayed
-    RestaurantListPage.Select Random Restaurant
-    RestaurantPage.Close Joker PopUp If Displayed
-    RestaurantPage.Add Favorite Restaurant
-    HomePage.Open User Detail Container
-    HomePage.Click My Favorite
-    FavoritePage.User Validates Restaurant Added To The Favorites
+User can add favorite
+    YemekSepetiApp.Open Home Page and User choose city
+    YemekSepetiApp.Dont show pop-ups with cookies
+    YemekSepetiApp.User logins from home page
+    YemekSepetiApp.User add restaurant to the favorites
+    YemekSepetiApp.User navigate to favorite page from homepage
+    YemekSepetiApp.User validates restaurant added to the favorites
 
 
     

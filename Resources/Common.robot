@@ -1,5 +1,5 @@
 *** Settings ***
-Documentation    CityPage
+Documentation    CommonPage
 Library  DebugLibrary
 Library  SeleniumLibrary
 
@@ -30,3 +30,4 @@ Open Home Page
 
 Wait For Page Loaded
     wait for condition  return document.readyState === "complete"   timeout=5
+
