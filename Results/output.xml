@@ -1,0 +1,442 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 4.1.2 (Python 3.9.9 on darwin)" generated="20211230 13:18:14.218" rpa="false" schemaversion="2">
+<suite id="s1" name="Yemeksepeti" source="/Users/ebru.gulek/PycharmProjects/robotframework-ys/test/yemeksepeti.robot">
+<test id="s1-t1" name="User can add favorite">
+<kw name="Begin Web Test" library="Common" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>about:blank</arg>
+<arg>${brw}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20211230 13:18:14.535" level="INFO">Opening browser 'chrome' to base url 'about:blank'.</msg>
+<status status="PASS" starttime="20211230 13:18:14.535" endtime="20211230 13:18:16.320"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20211230 13:18:16.321" endtime="20211230 13:18:16.444"/>
+</kw>
+<status status="PASS" starttime="20211230 13:18:14.534" endtime="20211230 13:18:16.444"/>
+</kw>
+<kw name="Open Home Page and User choose city" library="YemekSepetiApp">
+<kw name="Open Home Page" library="Common">
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${baseUrl}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20211230 13:18:16.446" level="INFO">Opening url 'https://www.yemeksepeti.com/'</msg>
+<status status="PASS" starttime="20211230 13:18:16.446" endtime="20211230 13:18:18.923"/>
+</kw>
+<kw name="Wait For Page Loaded" library="Common">
+<kw name="Wait For Condition" library="SeleniumLibrary">
+<arg>return document.readyState === "complete"</arg>
+<arg>timeout=5</arg>
+<doc>Waits until ``condition`` is true or ``timeout`` expires.</doc>
+<status status="PASS" starttime="20211230 13:18:18.924" endtime="20211230 13:18:18.929"/>
+</kw>
+<status status="PASS" starttime="20211230 13:18:18.923" endtime="20211230 13:18:18.929"/>
+</kw>
+<status status="PASS" starttime="20211230 13:18:16.445" endtime="20211230 13:18:18.930"/>
+</kw>
+<kw name="Choose City" library="CityPage">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${city}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20211230 13:18:18.930" endtime="20211230 13:18:18.953"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${city}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20211230 13:18:18.954" level="INFO">Clicking element 'xpath=//a[@href='/istanbul']'.</msg>
+<status status="PASS" starttime="20211230 13:18:18.953" endtime="20211230 13:18:21.017"/>
+</kw>
+<status status="PASS" starttime="20211230 13:18:18.930" endtime="20211230 13:18:21.017"/>
+</kw>
+<status status="PASS" starttime="20211230 13:18:16.445" endtime="20211230 13:18:21.017"/>
+</kw>
+<kw name="Dont show pop-ups with cookies" library="YemekSepetiApp">
+<kw name="Dont show pop-ups with cookies" library="CityPage">
+<kw name="Add Cookie" library="SeleniumLibrary">
+<arg>splashViewed</arg>
+<arg>true</arg>
+<doc>Adds a cookie to your current session.</doc>
+<status status="PASS" starttime="20211230 13:18:21.018" endtime="20211230 13:18:21.024"/>
+</kw>
+<kw name="Add Cookie" library="SeleniumLibrary">
+<arg>banabiPopoverShown</arg>
+<arg>1</arg>
+<doc>Adds a cookie to your current session.</doc>
+<status status="PASS" starttime="20211230 13:18:21.024" endtime="20211230 13:18:21.027"/>
+</kw>
+<status status="PASS" starttime="20211230 13:18:21.018" endtime="20211230 13:18:21.027"/>
+</kw>
+<status status="PASS" starttime="20211230 13:18:21.018" endtime="20211230 13:18:21.028"/>
+</kw>
+<kw name="User logins from home page" library="YemekSepetiApp">
+<kw name="Login With Crendentials" library="LoginPage">
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${mailAddress}</arg>
+<arg>${user_mail}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20211230 13:18:21.029" level="INFO">Typing text 'yemeksepeticase@gmail.com' into text field 'id=UserName'.</msg>
+<status status="PASS" starttime="20211230 13:18:21.029" endtime="20211230 13:18:21.175"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20211230 13:18:22.176" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20211230 13:18:21.175" endtime="20211230 13:18:22.176"/>
+</kw>
+<kw name="Input Password" library="SeleniumLibrary">
+<arg>${password}</arg>
+<arg>${user_pass}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<msg timestamp="20211230 13:18:22.177" level="INFO">Typing password into text field 'id=password'.</msg>
+<msg timestamp="20211230 13:18:22.210" level="INFO">Temporally setting log level to: NONE</msg>
+<msg timestamp="20211230 13:18:22.264" level="INFO">Log level changed from NONE to INFO.</msg>
+<status status="PASS" starttime="20211230 13:18:22.176" endtime="20211230 13:18:22.264"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${submitButton}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20211230 13:18:22.265" level="INFO">Clicking element 'id=ys-fastlogin-button'.</msg>
+<status status="PASS" starttime="20211230 13:18:22.264" endtime="20211230 13:18:22.345"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>3</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20211230 13:18:25.345" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20211230 13:18:22.345" endtime="20211230 13:18:25.346"/>
+</kw>
+<status status="PASS" starttime="20211230 13:18:21.028" endtime="20211230 13:18:25.346"/>
+</kw>
+<status status="PASS" starttime="20211230 13:18:21.028" endtime="20211230 13:18:25.346"/>
+</kw>
+<kw name="User add restaurant to the favorites" library="YemekSepetiApp">
+<kw name="Open Choose Region Container" library="HomePage">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${chooseRegion}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20211230 13:18:25.347" endtime="20211230 13:18:25.373"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${chooseRegion}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20211230 13:18:25.373" level="INFO">Clicking element 'id=select2-ys-areaSelector-container'.</msg>
+<status status="PASS" starttime="20211230 13:18:25.373" endtime="20211230 13:18:25.598"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>5</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20211230 13:18:30.601" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20211230 13:18:25.599" endtime="20211230 13:18:30.602"/>
+</kw>
+<status status="PASS" starttime="20211230 13:18:25.346" endtime="20211230 13:18:30.602"/>
+</kw>
+<kw name="Select Random Regions" library="HomePage">
+<kw name="Get WebElements" library="SeleniumLibrary">
+<var>${elms}</var>
+<arg>${regionList}</arg>
+<doc>Returns a list of WebElement objects matching the ``locator``.</doc>
+<msg timestamp="20211230 13:18:30.708" level="INFO">${elms} = [&lt;selenium.webdriver.remote.webelement.WebElement (session="46a7d0c52dbafd5aedf210319a47578a", element="3c2d9923-62ba-495c-ab4b-0033286cc83a")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (sessi...</msg>
+<status status="PASS" starttime="20211230 13:18:30.603" endtime="20211230 13:18:30.708"/>
+</kw>
+<kw name="Get Element Count" library="SeleniumLibrary">
+<var>${count}</var>
+<arg>${regionList}</arg>
+<doc>Returns the number of elements matching ``locator``.</doc>
+<msg timestamp="20211230 13:18:30.827" level="INFO">${count} = 1139</msg>
+<status status="PASS" starttime="20211230 13:18:30.708" endtime="20211230 13:18:30.827"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${random}</var>
+<arg>random.randint(0, ${count}-1)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20211230 13:18:30.828" level="INFO">${random} = 411</msg>
+<status status="PASS" starttime="20211230 13:18:30.828" endtime="20211230 13:18:30.828"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${elms[${random}]}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20211230 13:18:30.829" level="INFO">Clicking element '&lt;selenium.webdriver.remote.webelement.WebElement (session="46a7d0c52dbafd5aedf210319a47578a", element="758d68ab-0b97-41ca-8f03-b5790ad20802")&gt;'.</msg>
+<status status="PASS" starttime="20211230 13:18:30.828" endtime="20211230 13:18:30.887"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>5</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20211230 13:18:35.888" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20211230 13:18:30.887" endtime="20211230 13:18:35.888"/>
+</kw>
+<status status="PASS" starttime="20211230 13:18:30.602" endtime="20211230 13:18:35.889"/>
+</kw>
+<kw name="Click Search Restaurant Button" library="HomePage">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${searchInput}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20211230 13:18:35.890" endtime="20211230 13:18:35.912"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${searchInput}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20211230 13:18:35.913" level="INFO">Clicking element 'css=span[class*='ys-icons ys-icons-search icon']'.</msg>
+<status status="PASS" starttime="20211230 13:18:35.912" endtime="20211230 13:18:38.419"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>10</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20211230 13:18:48.421" level="INFO">Slept 10 seconds</msg>
+<status status="PASS" starttime="20211230 13:18:38.419" endtime="20211230 13:18:48.421"/>
+</kw>
+<status status="PASS" starttime="20211230 13:18:35.889" endtime="20211230 13:18:48.421"/>
+</kw>
+<kw name="Close Joker PopUp If Displayed" library="RestaurantListPage">
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<var>${IsElementVisible}</var>
+<arg>Element Should be Enabled</arg>
+<arg>${closeJokerPopUpButton}</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<kw name="Element Should Be Enabled" library="SeleniumLibrary">
+<arg>${closeJokerPopUpButton}</arg>
+<doc>Verifies that element identified by ``locator`` is enabled.</doc>
+<status status="PASS" starttime="20211230 13:18:48.423" endtime="20211230 13:18:48.477"/>
+</kw>
+<msg timestamp="20211230 13:18:48.477" level="INFO">${IsElementVisible} = True</msg>
+<status status="PASS" starttime="20211230 13:18:48.422" endtime="20211230 13:18:48.477"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>'${IsElementVisible}'=='True'</arg>
+<arg>Click Element</arg>
+<arg>${closeJokerPopUpButton}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${closeJokerPopUpButton}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20211230 13:18:48.478" level="INFO">Clicking element 'id=cboxClose'.</msg>
+<status status="PASS" starttime="20211230 13:18:48.478" endtime="20211230 13:18:48.540"/>
+</kw>
+<status status="PASS" starttime="20211230 13:18:48.477" endtime="20211230 13:18:48.540"/>
+</kw>
+<status status="PASS" starttime="20211230 13:18:48.422" endtime="20211230 13:18:48.540"/>
+</kw>
+<kw name="Select Random Restaurant" library="RestaurantListPage">
+<kw name="Get WebElements" library="SeleniumLibrary">
+<var>${elms}</var>
+<arg>${restaurantList}</arg>
+<doc>Returns a list of WebElement objects matching the ``locator``.</doc>
+<msg timestamp="20211230 13:18:48.554" level="INFO">${elms} = [&lt;selenium.webdriver.remote.webelement.WebElement (session="46a7d0c52dbafd5aedf210319a47578a", element="e5f16791-5bae-4767-ab9c-460b3c01dd8a")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (sessi...</msg>
+<status status="PASS" starttime="20211230 13:18:48.540" endtime="20211230 13:18:48.555"/>
+</kw>
+<kw name="Get Element Count" library="SeleniumLibrary">
+<var>${count}</var>
+<arg>${restaurantList}</arg>
+<doc>Returns the number of elements matching ``locator``.</doc>
+<msg timestamp="20211230 13:18:48.565" level="INFO">${count} = 154</msg>
+<status status="PASS" starttime="20211230 13:18:48.555" endtime="20211230 13:18:48.565"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${random}</var>
+<arg>random.randint(0, ${count})</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20211230 13:18:48.565" level="INFO">${random} = 140</msg>
+<status status="PASS" starttime="20211230 13:18:48.565" endtime="20211230 13:18:48.565"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${selectedRestaurantName}</var>
+<arg>${elms[${random}]}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20211230 13:18:48.578" level="INFO">${selectedRestaurantName} = Dönerci Yılmaz Usta, Avcılar (Mustafa Kemal Paşa Mah.)</msg>
+<status status="PASS" starttime="20211230 13:18:48.566" endtime="20211230 13:18:48.578"/>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${selectedRestaurantName}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20211230 13:18:48.579" level="INFO">${selectedRestaurantName} = Dönerci Yılmaz Usta, Avcılar (Mustafa Kemal Paşa Mah.)</msg>
+<status status="PASS" starttime="20211230 13:18:48.578" endtime="20211230 13:18:48.579"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${selectedRestaurantName}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20211230 13:18:48.579" endtime="20211230 13:18:48.579"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${elms[${random}]}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20211230 13:18:48.580" level="INFO">Clicking element '&lt;selenium.webdriver.remote.webelement.WebElement (session="46a7d0c52dbafd5aedf210319a47578a", element="61b6d64d-7148-4e73-94bc-0af1170bcb2a")&gt;'.</msg>
+<status status="PASS" starttime="20211230 13:18:48.579" endtime="20211230 13:18:50.566"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>10</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20211230 13:19:00.567" level="INFO">Slept 10 seconds</msg>
+<status status="PASS" starttime="20211230 13:18:50.566" endtime="20211230 13:19:00.567"/>
+</kw>
+<status status="PASS" starttime="20211230 13:18:48.540" endtime="20211230 13:19:00.568"/>
+</kw>
+<kw name="Close Joker PopUp If Displayed" library="RestaurantPage">
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<var>${IsElementVisible}</var>
+<arg>Element Should be Enabled</arg>
+<arg>${closeJokerPopUpButton}</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<kw name="Element Should Be Enabled" library="SeleniumLibrary">
+<arg>${closeJokerPopUpButton}</arg>
+<doc>Verifies that element identified by ``locator`` is enabled.</doc>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20211230 13:19:01.016" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-1.png"&gt;&lt;img src="selenium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20211230 13:19:00.585" endtime="20211230 13:19:01.016"/>
+</kw>
+<msg timestamp="20211230 13:19:01.024" level="FAIL">Element with locator 'id=cboxClose' not found.</msg>
+<status status="FAIL" starttime="20211230 13:19:00.569" endtime="20211230 13:19:01.024"/>
+</kw>
+<msg timestamp="20211230 13:19:01.024" level="INFO">${IsElementVisible} = False</msg>
+<status status="PASS" starttime="20211230 13:19:00.569" endtime="20211230 13:19:01.024"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>'${IsElementVisible}'=='True'</arg>
+<arg>Click Element</arg>
+<arg>${closeJokerPopUpButton}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" starttime="20211230 13:19:01.025" endtime="20211230 13:19:01.025"/>
+</kw>
+<status status="PASS" starttime="20211230 13:19:00.568" endtime="20211230 13:19:01.025"/>
+</kw>
+<kw name="Add Favorite Restaurant" library="RestaurantPage">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${addFavoriteButton}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20211230 13:19:01.025" endtime="20211230 13:19:01.044"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${addFavoriteButton}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20211230 13:19:01.044" level="INFO">Clicking element 'css=.social-button.favorite-button.add.active'.</msg>
+<status status="PASS" starttime="20211230 13:19:01.044" endtime="20211230 13:19:01.106"/>
+</kw>
+<status status="PASS" starttime="20211230 13:19:01.025" endtime="20211230 13:19:01.106"/>
+</kw>
+<status status="PASS" starttime="20211230 13:18:25.346" endtime="20211230 13:19:01.106"/>
+</kw>
+<kw name="User navigate to favorite page from homepage" library="YemekSepetiApp">
+<kw name="Open User Detail Container" library="HomePage">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${userInfoContainerButton}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20211230 13:19:01.107" endtime="20211230 13:19:01.122"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${userInfoContainerButton}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20211230 13:19:01.122" level="INFO">Clicking element 'css=.ys-user-info-container'.</msg>
+<status status="PASS" starttime="20211230 13:19:01.122" endtime="20211230 13:19:01.164"/>
+</kw>
+<status status="PASS" starttime="20211230 13:19:01.107" endtime="20211230 13:19:01.165"/>
+</kw>
+<kw name="Click My Favorite" library="HomePage">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${goToMyFavorite}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20211230 13:19:01.165" endtime="20211230 13:19:01.392"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${goToMyFavorite}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20211230 13:19:01.393" level="INFO">Clicking element 'css=.ys-userSettings [href='/hesabim/favorilerim']'.</msg>
+<status status="PASS" starttime="20211230 13:19:01.392" endtime="20211230 13:19:04.695"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>10</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20211230 13:19:14.696" level="INFO">Slept 10 seconds</msg>
+<status status="PASS" starttime="20211230 13:19:04.695" endtime="20211230 13:19:14.696"/>
+</kw>
+<status status="PASS" starttime="20211230 13:19:01.165" endtime="20211230 13:19:14.696"/>
+</kw>
+<status status="PASS" starttime="20211230 13:19:01.106" endtime="20211230 13:19:14.696"/>
+</kw>
+<kw name="User validates restaurant added to the favorites" library="YemekSepetiApp">
+<kw name="User Validates Restaurant Added To The Favorites" library="FavoritePage">
+<kw name="Get WebElements" library="SeleniumLibrary">
+<var>${restaurantElements}</var>
+<arg>${favoriteRestaurantNameList}</arg>
+<doc>Returns a list of WebElement objects matching the ``locator``.</doc>
+<msg timestamp="20211230 13:19:14.710" level="INFO">${restaurantElements} = [&lt;selenium.webdriver.remote.webelement.WebElement (session="46a7d0c52dbafd5aedf210319a47578a", element="507a3096-829a-4688-8c61-20e558790670")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (sessi...</msg>
+<status status="PASS" starttime="20211230 13:19:14.697" endtime="20211230 13:19:14.710"/>
+</kw>
+<for flavor="IN">
+<var>${eachItem}</var>
+<value>@{restaurantElements}</value>
+<iter>
+<var name="${eachItem}">&lt;selenium.webdriver.remote.webelement.WebElement (session="46a7d0c52dbafd5aedf210319a47578a", element="507a3096-829a-4688-8c61-20e558790670")&gt;</var>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${eachItem.text}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20211230 13:19:14.711" endtime="20211230 13:19:14.723"/>
+</kw>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<var>${isRestaurantNameVisible}</var>
+<arg>Element Should Contain</arg>
+<arg>${eachItem}</arg>
+<arg>${selectedRestaurantName}</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<kw name="Element Should Contain" library="SeleniumLibrary">
+<arg>${eachItem}</arg>
+<arg>${selectedRestaurantName}</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<msg timestamp="20211230 13:19:14.730" level="INFO">Element '&lt;selenium.webdriver.remote.webelement.WebElement (session="46a7d0c52dbafd5aedf210319a47578a", element="507a3096-829a-4688-8c61-20e558790670")&gt;' contains text 'Dönerci Yılmaz Usta, Avcılar (Mustafa Kemal Paşa Mah.)'.</msg>
+<status status="PASS" starttime="20211230 13:19:14.723" endtime="20211230 13:19:14.730"/>
+</kw>
+<msg timestamp="20211230 13:19:14.730" level="INFO">${isRestaurantNameVisible} = True</msg>
+<status status="PASS" starttime="20211230 13:19:14.723" endtime="20211230 13:19:14.730"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${isRestaurantNameVisible}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20211230 13:19:14.730" endtime="20211230 13:19:14.730"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>'${isRestaurantNameVisible}'=='True'</arg>
+<arg>Exit For Loop</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<kw name="Exit For Loop" library="BuiltIn">
+<doc>Stops executing the enclosing for loop.</doc>
+<msg timestamp="20211230 13:19:14.731" level="INFO">Exiting for loop altogether.</msg>
+<status status="PASS" starttime="20211230 13:19:14.731" endtime="20211230 13:19:14.731"/>
+</kw>
+<status status="PASS" starttime="20211230 13:19:14.730" endtime="20211230 13:19:14.731"/>
+</kw>
+<status status="PASS" starttime="20211230 13:19:14.711" endtime="20211230 13:19:14.731"/>
+</iter>
+<status status="PASS" starttime="20211230 13:19:14.710" endtime="20211230 13:19:14.732"/>
+</for>
+<kw name="Should Be True" library="BuiltIn">
+<arg>'${isRestaurantNameVisible}'=='True'</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" starttime="20211230 13:19:14.732" endtime="20211230 13:19:14.732"/>
+</kw>
+<status status="PASS" starttime="20211230 13:19:14.697" endtime="20211230 13:19:14.732"/>
+</kw>
+<status status="PASS" starttime="20211230 13:19:14.697" endtime="20211230 13:19:14.732"/>
+</kw>
+<kw name="End Web Test" library="Common" type="TEARDOWN">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20211230 13:19:14.733" endtime="20211230 13:19:14.866"/>
+</kw>
+<status status="PASS" starttime="20211230 13:19:14.732" endtime="20211230 13:19:14.866"/>
+</kw>
+<status status="PASS" starttime="20211230 13:18:14.534" endtime="20211230 13:19:14.866"/>
+</test>
+<doc>Yemeksepeti</doc>
+<status status="PASS" starttime="20211230 13:18:14.219" endtime="20211230 13:19:14.867"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Yemeksepeti">Yemeksepeti</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
