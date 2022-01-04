@@ -21,7 +21,7 @@ Virtual env nasıl yaratılır:
 
 Projeyi aktif ettikten sonra chrome driver linklenir.
 
-1- chrome driver'ın usr/bin in altında gorebilmesi için chromedriver indirilir.
+1- Chrome driver'ın usr/bin in altında gorebilmesi için chromedriver indirilir.
 ```
     brew reinstall chromedriver
 ```
