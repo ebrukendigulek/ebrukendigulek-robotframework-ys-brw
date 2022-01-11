@@ -1,14 +1,14 @@
 *** Settings ***
-Documentation    YemeksepetiApp
-Library  DebugLibrary
-Library  SeleniumLibrary
-Resource    ../Resources/Pages/LoginPage.robot
-Resource    ../Resources/Common.robot
-Resource    ../Resources/Pages/CityPage.robot 
-Resource    ../Resources/Pages/HomePage.robot 
-Resource    ../Resources/Pages/RestaurantListPage.robot 
-Resource    ../Resources/Pages/RestaurantPage.robot
-Resource    ../Resources/Pages/FavoritePage.robot 
+Documentation   YemeksepetiApp
+Library         DebugLibrary
+Library         Browser
+Resource        ../Resources/Pages/LoginPage.robot
+Resource        ../Resources/Common.robot
+Resource        ../Resources/Pages/CityPage.robot
+Resource        ../Resources/Pages/HomePage.robot
+Resource        ../Resources/Pages/RestaurantListPage.robot
+Resource        ../Resources/Pages/RestaurantPage.robot
+Resource        ../Resources/Pages/FavoritePage.robot
 
 
 *** Keywords ***
@@ -37,4 +37,3 @@ User navigate to favorite page from homepage
 
 User validates restaurant added to the favorites
     FavoritePage.User Validates Restaurant Added To The Favorites
-

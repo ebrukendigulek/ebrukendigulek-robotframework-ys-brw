@@ -40,6 +40,9 @@ Projeyi aktif ettikten sonra chrome driver linklenir.
 ```
     python -m pip install --upgrade pip
     pip install -r requirements.txt
+    pip install --upgrade robotframework-browser
+    rfbrowser clean-node
+    rfbrowser init
 ```
 
 ##  Projeyi Çalıştırmak için:
@@ -48,3 +51,7 @@ Projeyi aktif ettikten sonra chrome driver linklenir.
 ```
     robot -d ../Results ../test/yemeksepeti.robot
 ```
+
+## Linkler:
+* https://marketsquare.github.io/robotframework-browser/Browser.html
+* https://robotframework.org/SeleniumLibrary/SeleniumLibrary.html  

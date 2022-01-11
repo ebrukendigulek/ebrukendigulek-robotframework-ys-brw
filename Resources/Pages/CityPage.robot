@@ -1,17 +1,18 @@
 *** Settings ***
-Documentation    CityPage
-Library  DebugLibrary
-Library  SeleniumLibrary
+Documentation   CityPage
+Library         DebugLibrary
+Library         Browser
 
 
 *** Variables ***
-${city}  xpath=//a[@href='/istanbul']
+${city}         xpath=//a[@href='/istanbul']
+
 
 *** Keywords ***
 Choose City
-    Wait Until Element Is Visible  ${city}
-    Click Element  ${city}
+    Wait For Elements State     ${city}     visible     15
+    Click                       ${city}
   
 Dont show pop-ups with cookies
-    Add Cookie  splashViewed  true
-    Add Cookie  banabiPopoverShown  1
+    Add Cookie      splashViewed            true    https://www.yemeksepeti.com/
+    Add Cookie      banabiPopoverShown      1       https://www.yemeksepeti.com/

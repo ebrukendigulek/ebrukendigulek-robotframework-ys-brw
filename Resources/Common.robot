@@ -1,33 +1,29 @@
 *** Settings ***
-Documentation    CommonPage
-Library  DebugLibrary
-Library  SeleniumLibrary
+Documentation   CommonPage
+Library         DebugLibrary
+Library         Browser
 
 
 *** Variables ***
-${defaultBrowser}                      chrome
-${baseUrl}  https://www.yemeksepeti.com/
+${defaultBrowser}   chromium
+${baseUrl}          https://www.yemeksepeti.com/
+
 
 *** Keywords ***
-create session
-    open browser  about:blank  chrome
-
-close session
-    close all browsers
-
-
 Begin Web Test
-    [Arguments]     ${brw}=${defaultBrowser}
-    Open Browser    about:blank         ${brw}
-    maximize browser window
+    [Arguments]         ${brw}=${defaultBrowser}
+    New Browser         ${brw}      headless=false      channel=chrome
+    New Context         viewport={'width': 1920, 'height': 1200}
+    New Page            about:blank
+    Set Strict Mode     False
 
 End Web Test
     Close Browser
 
 Open Home Page
-    go to           ${baseUrl}
+    Go To               ${baseUrl}
     Wait For Page Loaded
 
 Wait For Page Loaded
-    wait for condition  return document.readyState === "complete"   timeout=5
+    Wait For Function   document.readyState === "complete"   timeout=5
 

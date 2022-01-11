@@ -1,0 +1,7 @@
+robotframework
+robotframework-debuglibrary
+robotframework-seleniumlibrary
+robotframework-browser
+robotframework-requests
+robotframework-jsonvalidator
+webdrivermanager
